@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number incrementor</title>
+    <style>
+    body{
+        background-color: black;
+    }
+    .buttonwork{
+        margin-left: 15%;
+        margin-top: 5%;
+        height: 5vw;
+        width:10vw;
+        font-family: 'Lucida Sans';
+        font-size: 1.5vw;
+        background-color: turquoise;
+        color: purple;
+    }
+    #digit{
+        margin-top: 10%;
+        margin-left: 42%;
+        size: "100px";
+        color: rgb(0,0,255);
+        background-color: white;
+        width: 7vw;
+        background-color: black;
+        text-decoration: blue;
+        font-size: 12vw;
+    }
+    </style>
+</head>
+    <input type="text"  id="digit" value="0" disabled="True" >
+    <div  ><input type="button" value="increment" class="buttonwork" onclick="increment()" id="1" onmouseover="document.getElementById('1').style.backgroundColor= 'red';document.getElementById('1').style.color='green'" onmouseout="document.getElementById('1').style.backgroundColor= 'turquoise';document.getElementById('1').style.color='purple'">
+    
+    <input type="button" value="decrement" class="buttonwork" onclick="decrement()"  id="2" onmouseover="document.getElementById('2').style.backgroundColor= 'red';document.getElementById('2').style.color='green'" onmouseout="document.getElementById('2').style.backgroundColor= 'turquoise';document.getElementById('2').style.color='purple'"> 
+    
+    <input type="button" value="reset" class="buttonwork" onclick="reset()" id="3" onmouseover="document.getElementById('3').style.backgroundColor= 'red';document.getElementById('3').style.color='green'" onmouseout="document.getElementById('3').style.backgroundColor= 'turquoise';document.getElementById('3').style.color='purple'"></div>
+
+    <script>
+    var t;
+    t={10:'17vw',100:'27vw',1000:'37vw',10000:'47vw',100000:'57vw',1000000:'67vw'}
+    function increment()
+    {
+        var x;
+        x=document.getElementById("digit").value;
+        document.getElementById("digit").value=Number(x)+1;
+        if (Number(x)+1>=10 && Number(x)+1<100)
+        {document.getElementById("digit").style.width=t[10];
+        document.getElementById("digit").style.marginLeft="37%";}
+        else if (Number(x)+1>=100 && Number(x)+1<1000)
+        {document.getElementById("digit").style.width=t[100];
+        document.getElementById("digit").style.marginLeft="32%";}
+        else if (Number(x)+1>=1000 && Number(x)+1<10000)
+        {document.getElementById("digit").style.width=t[1000];
+        document.getElementById("digit").style.marginLeft="27%";}
+        else if (Number(x)+1>=10000 && Number(x)+1<100000)
+        {document.getElementById("digit").style.width=t[10000];
+        document.getElementById("digit").style.marginLeft="22%";}
+        else if (Number(x)+1>=100000 && Number(x)+1<1000000)
+        {document.getElementById("digit").style.width=t[100000];
+        document.getElementById("digit").style.marginLeft="17%";}
+        else if (Number(x)+1>=1000000 && Number(x)+1<10000000)
+        {document.getElementById("digit").style.width=t[1000000];
+        document.getElementById("digit").style.marginLeft="12%";}
+    }
+    function decrement()
+    {
+        var x;
+        x=Number(document.getElementById("digit").value);
+        if (x==0)
+        {
+            document.getElementById("digit").value=0;
+        }
+        else
+        document.getElementById("digit").value= x-1;
+        if (Number(x)-1>=0 && Number(x)-1<10)
+        {document.getElementById("digit").style.width="7%";
+        document.getElementById("digit").style.marginLeft="42%";}
+        if (Number(x)-1>=10 && Number(x)-1<100)
+        {document.getElementById("digit").style.width=t[10];
+        document.getElementById("digit").style.marginLeft="37%";}
+        else if (Number(x)-1>=100 && Number(x)-1<1000)
+        {document.getElementById("digit").style.width=t[100];
+        document.getElementById("digit").style.marginLeft="32%";}
+        else if (Number(x)-1>=1000 && Number(x)-1<10000)
+        {document.getElementById("digit").style.width=t[1000];
+        document.getElementById("digit").style.marginLeft="27%";}
+        else if (Number(x)-1>=10000 && Number(x)-1<100000)
+        {document.getElementById("digit").style.width=t[10000];
+        document.getElementById("digit").style.marginLeft="22%";}
+        else if (Number(x)-1>=100000 && Number(x)-1<1000000)
+        {document.getElementById("digit").style.width=t[100000];
+        document.getElementById("digit").style.marginLeft="17%";}
+        else if (Number(x)-1>=1000000 && Number(x)-1<10000000)
+        {document.getElementById("digit").style.width=t[1000000];
+        document.getElementById("digit").style.marginLeft="12%";}
+    }
+    function reset()
+    {
+        var x;
+        document.getElementById("digit").value=0;
+        document.getElementById("digit").style.marginLeft="42%";
+        document.getElementById("digit").style.width="7%";
+
+    }
+    </script>
+
+<body>
+</body>
+</html>
